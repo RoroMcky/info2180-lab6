@@ -1,0 +1,32 @@
+h1 {
+    text-align: center;
+    color: white;
+}
+
+
+#searchCode {
+    background-color: #c0c0c0;
+    width: 780px;
+    padding: 20px;
+    height: auto;
+    
+}
+#s_box 
+{
+    height: 30px;
+}
+#name {
+    text-align: center;
+    height: 80px;
+    padding: 10px;
+    background-color:#7b68ee;
+    width: 800px;
+   
+}
+
+#search {
+    background-color: pink;
+    color: white;
+    height: 40px;
+}
+
