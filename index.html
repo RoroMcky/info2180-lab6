@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title> Seach Button Demo Using Ajax </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        
+        <link rel="stylesheet" type="text/css" href="dictionary.css" />
+        <script src="//ajax.googleapis.com/ajax/libs/prototype/1.7.1.0/prototype.js"></script>
+        <script>
+           window.onload = function() {
+             document.getElementById("search").addEventListener(
+                             "click", function(){
+                var s_box =document.getElementById("s_box").value            
+                new Ajax.Request("request.php?q="+s_box+"&all=true",
+                       {
+                          method: "get",
+                          onSuccess: UsetheResult
+                         });
+                  
+           });
+function UsetheResult(data) {
+                var div = document.getElementById('result');
+                if((data.responseXML)==null){   
+                        div.innerHTML = div.innerHTML + data.responseText;
+                }
+                else{
+                    div.innerHTML = div.innerHTML + data.responseText;
+                }
+    
+}
+           }                        
+       </script>
+        
+    </head>
+    <body>
+            <div id="name">
+            <h1> Web Dictionary </h1>
+            </div>
+            <br>
+            <div id="search_module">
+            <input id ="s_box" type="text">
+            <button id="search">Search</button>
+            <button id="get_defn"> Get All Definitions </button>
+            <br>
+            <div id ="result"> </div>
+            </div>
+    
+            
+    </body>
+</html>
